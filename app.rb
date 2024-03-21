@@ -1,5 +1,5 @@
 
-require_relative "recipe-builder"
+require_relative "meal_builder"
 require "active_support/all"
 recipe_builder = RecipeBuilder.new
 recipe_builder.add
