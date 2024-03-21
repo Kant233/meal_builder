@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "./recipe-builder"
+require "./meal_builder"
 
 class TestRecipeBuilder < Minitest::Test
   def test_protein
@@ -23,4 +23,3 @@ end
 
 
  
-
