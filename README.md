@@ -1,5 +1,6 @@
-# ruby-cli-template
+# Meal Builder CLI
 
-Use this repository as a template for your Ruby CLI (command line interface) project.
+A command line interface application that creates and stores user's input into a meal.
 
-- Ruby version: `3.2.1`
+USAGE:
+Input ruby app.rb into the terminal. 
