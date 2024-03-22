@@ -1,3 +1,4 @@
+stored_recipes = []
 class RecipeBuilder
   attr_accessor :protein, :carbohydrate, :vegetable
   
@@ -22,7 +23,6 @@ class RecipeBuilder
   end
   
   def add 
-    stored_recipes = []
     puts "\n"
     recipe = build
     if !@protein.blank? && !@carbohydrate.blank? && !@vegetable.blank?
@@ -72,4 +72,3 @@ class RecipeBuilder
  end
 end
 end
-
