@@ -2,11 +2,17 @@ stored_recipes = []
 class RecipeBuilder
   attr_accessor :protein, :carbohydrate, :vegetable
   
-  def initialize
+  def initialize(protein,carbohydrate,vegetable)
     @protein = protein
     @carbohydrate = carbohydrate
     @vegetable = vegetable
   end
+  def is_valid_protein
+    if !@protein.empty?
+      puts "A protein has been entered."
+    end
+  end
+    
   def build
     puts "\n"
     puts "Welcome to Ruby Chef's Kitchen, lets start building your dinner recipe!"
