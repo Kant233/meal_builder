@@ -23,8 +23,9 @@ class TestRecipeBuilder < Minitest::Test
     assert("chicken", @recipebuilder.is_valid_protein)
   end
   def test_invalid_protein
-    recipe = RecipeBuilder.new("Tofu","Pasta","Beans")
+    recipe = RecipeBuilder.new("Peas","Pasta","Beans")
     refute(recipe.is_valid_protein)
+    puts "Invalid protein choice "
   end
 end
 
