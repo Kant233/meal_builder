@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require "./meal_builder"
+require 'stringio'
 
 class TestRecipeBuilder < Minitest::Test
   def setup
@@ -27,6 +28,15 @@ class TestRecipeBuilder < Minitest::Test
     refute(recipe.is_valid_protein)
     puts "Invalid protein choice "
   end
+  
+  def test_cook
+    cook_choice = RecipeBuilder.new("chicken","pasta","beans").cook
+    input1 = StringIO.new("1\n") # fake user input
+    $stdin = input1 #stub to use the fake input
+    result = cook_choice.cook 
+    assert_equal "Pan-Seared", result
+  end
+
 end
 
 

@@ -39,8 +39,10 @@ class RecipeBuilder
       puts "Failed to store recipe, please enter valid options."
     end
   end
+  
   def cook
-    loop do
+   cook_method = RecipeBuilder.cook
+   loop do
       puts "\n"
       puts "How would you like to cook your protein?"
       puts "1. Pan-Seared"
