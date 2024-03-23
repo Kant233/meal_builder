@@ -41,40 +41,27 @@ class RecipeBuilder
   end
   def cook
     loop do
-    puts "\n"
-    puts "How would you like to cook your protein?"
-    puts "1. Pan-sear"
-    puts "2. Fry"
-    puts "3. Bake"
-    puts "4. Ruby chef's decision"
-    puts "5. End simulation"
-    choice = gets.chomp.to_i
-    case choice
-    when 1
-     sear
-    when 2
-      fry
-    when 3
-      bake
-    when 4
-      chef
-    when 5 
-      puts "Thanks for playing!"
-      break; 
-    end 
-  end
-  def sear
-    puts "You decided to pan-sear your #{@protein} excellent choice!"
-  end
-  def fry
-    puts "You decided to fry your #{@protein}, excellent choice!"
-  end
-  def bake 
-    puts "You decided to bake your #{@protein}, excellent choice!"
-  end
-  def chef
-    cook = ["pan-sear", "fry","bake"].sample
-    puts "The chef has decided to #{cook} your #{@protein}!"
- end
-end
+      puts "\n"
+      puts "How would you like to cook your protein?"
+      puts "1. Pan-Seared"
+      puts "2. Fried"
+      puts "3. Ruby Chef's decision"
+      puts "4. End Simulation"
+      choice = gets.chomp.to_i
+      case choice
+      when 1
+        cook_choice = "Pan-Seared"
+      when 2
+        cook_choice = "Fried"
+      when 3
+        cook_choice = "Grilled"
+      when 4
+        puts "Thanks for playing!"
+        break
+      else
+        puts "Invalid option"
+      end
+      return cook_choice if [1, 2, 3].include?(choice)
+    end
+  end  
 end
