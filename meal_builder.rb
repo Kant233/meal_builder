@@ -1,14 +1,14 @@
-stored_recipes = []
 class RecipeBuilder
+  @@stored_recipes = []
   attr_accessor :protein, :carbohydrate, :vegetable
   
-  def initialize(protein,carbohydrate,vegetable)
+  def initialize(protein, carbohydrate, vegetable)
     @protein = protein
     @carbohydrate = carbohydrate
     @vegetable = vegetable
   end
   def is_valid_protein
-    if !@protein.empty?
+    if !@protein.empty? && !protein.nil?
       puts "A protein has been entered."
     end
   end
@@ -19,7 +19,7 @@ class RecipeBuilder
     puts "\n"
     puts "What will be your choice of protein?"
     self.protein = gets.chomp.downcase
-    puts "What carbohyrdrate will go along with your #{self.protein}?"
+    puts "What carbohydrate will go along with your #{self.protein}?"
     self.carbohydrate = gets.chomp.downcase
     puts "Lastly, what vegetable will complete your meal?"
     self.vegetable = gets.chomp.downcase
