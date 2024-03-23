@@ -41,7 +41,6 @@ class RecipeBuilder
   end
   
   def cook
-   cook_method = RecipeBuilder.cook
    loop do
       puts "\n"
       puts "How would you like to cook your protein?"
@@ -50,6 +49,7 @@ class RecipeBuilder
       puts "3. Ruby Chef's decision"
       puts "4. End Simulation"
       choice = gets.chomp.to_i
+
       case choice
       when 1
         cook_choice = "Pan-Seared"
@@ -62,8 +62,10 @@ class RecipeBuilder
         break
       else
         puts "Invalid option"
+       next
       end
       return cook_choice if [1, 2, 3].include?(choice)
     end
   end  
+
 end

@@ -33,8 +33,7 @@ class TestRecipeBuilder < Minitest::Test
     cook_choice = RecipeBuilder.new("chicken","pasta","beans").cook
     input1 = StringIO.new("1\n") # fake user input
     $stdin = input1 #stub to use the fake input
-    result = cook_choice.cook 
-    assert_equal "Pan-Seared", result
+    assert_equal "Pan-Seared", cook_choice
   end
 
 end
