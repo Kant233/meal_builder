@@ -1,3 +1,4 @@
+require 'active_support/all'
 class RecipeBuilder
   @@stored_recipes = []
   attr_accessor :protein, :carbohydrate, :vegetable
@@ -33,7 +34,7 @@ class RecipeBuilder
     recipe = build
     if !@protein.blank? && !@carbohydrate.blank? && !@vegetable.blank?
        
-      stored_recipes.push(recipe)
+      @@stored_recipes.push(recipe)
       puts "Recipe stored successfully!"
     else
       puts "Failed to store recipe, please enter valid options."
@@ -53,15 +54,18 @@ class RecipeBuilder
       case choice
       when 1
         cook_choice = "Pan-Seared"
+       puts "Your #{@protein} will be pan-seared"
       when 2
         cook_choice = "Fried"
+        puts "Your #{@protein} will be fried"
       when 3
         cook_choice = "Grilled"
+        puts "Your #{@protein} will be grilled"
       when 4
         puts "Thanks for playing!"
         break
       else
-        puts "Invalid option"
+        puts "Invalid option, try again."
        next
       end
       return cook_choice if [1, 2, 3].include?(choice)
